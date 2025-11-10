@@ -19,7 +19,7 @@ public class ValidateMatchDetailsStep implements IStep<FetchMatchDetailsContext>
         long startTime = System.currentTimeMillis();
         try {
             int skipped = 0;
-
+            
             for (MatchDTO match : context.fetchedMatchDetails) {
                 if (match == null || match.metadata == null || match.metadata.matchId == null) {
                     context.logs.computeIfAbsent(getClass().getSimpleName(), k -> new java.util.ArrayList<>())

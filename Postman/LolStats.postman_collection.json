@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "06198379-9fa1-4b64-aaf1-459610a5ee9a",
+		"name": "LolStats",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33318913",
+		"_collection_link": "https://asdsadsda-7331.postman.co/workspace/asdsadsda-Workspace~aa917d29-8767-43d7-8950-cfa214eb0b07/collection/33318913-06198379-9fa1-4b64-aaf1-459610a5ee9a?action=share&source=collection_link&creator=33318913"
+	},
+	"item": [
+		{
+			"name": "DatabaseBuilder",
+			"item": [
+				{
+					"name": "get Players",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region\": \"EUN1\" ,\r\n    \"tier\": \"PLATINUM\" ,\r\n    \"division\": \"II\" ,\r\n    \"queue\": \"RANKED_SOLO_5x5\",\r\n    \"page\": \"5\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4020/api/database/FetchPlayers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4020",
+							"path": [
+								"api",
+								"database",
+								"FetchPlayers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Matches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region\": \"europe\",\r\n    \"playerLimit\": 4,\r\n    \"type\": \"ranked\",\r\n    \"tier\": \"IRON\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4020/api/database/FetchMatches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4020",
+							"path": [
+								"api",
+								"database",
+								"FetchMatches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Match Details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region\": \"europe\",\r\n    \"playerMatchLimit\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4020/api/database/FetchMatchDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4020",
+							"path": [
+								"api",
+								"database",
+								"FetchMatchDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analise Champions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limitMatches\": 9999999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4020/api/database/AnaliseMatches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4020",
+							"path": [
+								"api",
+								"database",
+								"AnaliseMatches"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CouchDB",
+			"item": [
+				{
+					"name": "CouchDB Post puuids",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"selector\": {},\r\n  \"fields\": [\r\n    \"puuid\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://admin:admin@localhost:5984/players/_find",
+							"protocol": "http",
+							"auth": {
+								"user": "admin",
+								"password": "admin"
+							},
+							"host": [
+								"localhost"
+							],
+							"port": "5984",
+							"path": [
+								"players",
+								"_find"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Api",
+			"item": [
+				{
+					"name": "Get Champions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4021/api/data/getChampions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4021",
+							"path": [
+								"api",
+								"data",
+								"getChampions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

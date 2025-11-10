@@ -45,21 +45,15 @@ export default function ChampionTable({ champions }) {
         <tr>
           <th onClick={() => handleSort("index")}>#</th>
           <th onClick={() => handleSort("name")}>Champion{getSortIndicator("name")}</th>
-          <th onClick={() => handleSort("role")}>Role{getSortIndicator("role")}</th>
-          <th onClick={() => handleSort("tier")}>Tier{getSortIndicator("tier")}</th>
           <th onClick={() => handleSort("winRate")}>Win Rate{getSortIndicator("winRate")}</th>
           <th onClick={() => handleSort("pickRate")}>Pick Rate{getSortIndicator("pickRate")}</th>
           <th onClick={() => handleSort("banRate")}>Ban Rate{getSortIndicator("banRate")}</th>
-          <th onClick={() => handleSort("counterPicks")}>Counter Picks{getSortIndicator("counterPicks")}</th>
           <th onClick={() => handleSort("totalMatchesPicked")}>Matches{getSortIndicator("totalMatchesPicked")}</th>
         </tr>
       </thead>
         <tbody>
           {sortedChampions.map((champ, idx) => (
-            <tr key={idx}
-            onClick={() => navigate(`/championDetail/${champ.name}`)}
-            style={{ cursor: "pointer" }}
-            >
+            <tr key={idx}>
               <td>{idx + 1}</td>
               <td>
                 <img
@@ -69,12 +63,9 @@ export default function ChampionTable({ champions }) {
                 />
                 {champ.name}
               </td>
-              <td>{champ.role || "-"}</td>
-              <td>{champ.tier || "-"}</td>
               <td>{champ.winRate + "%" || "0%"}</td>
               <td>{champ.pickRate + "%" || "0%"}</td>
               <td>{champ.banRate + "%" || "0%"}</td>
-              <td>{champ.counterPicks?.join(", ") || "-"}</td>
               <td>{champ.totalMatchesPicked || 0}</td>
             </tr>
           ))}

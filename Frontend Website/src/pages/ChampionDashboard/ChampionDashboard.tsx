@@ -34,7 +34,6 @@ export default function ChampionDashboard() {
             const value = tooltipItem.parsed.y ?? 0;
             
             if (datasetLabel === "Matches (normalized)" && champions) {
-              // Find the champion by name (not by index, to avoid index mismatch with filtered data)
               const championName = tooltipItem.label;
               const champion = champions.find((c) => c.name === championName);
               const originalMatches = champion?.totalMatchesPicked || 0;
