@@ -2,7 +2,6 @@ package com.backendwebsite.Api.Service;
 
 import com.backendwebsite.Api.DTO.ChampionDetails.ChampionDetailsResponse;
 import com.backendwebsite.DatabaseBuilder.Client.CouchDBClient;
-import com.backendwebsite.DatabaseBuilder.Domain.Player.Player;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpResponse;

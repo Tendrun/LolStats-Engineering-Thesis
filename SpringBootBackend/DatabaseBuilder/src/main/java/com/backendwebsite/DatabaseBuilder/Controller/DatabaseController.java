@@ -62,7 +62,8 @@ public class DatabaseController {
                 req.tier(),
                 req.division(),
                 req.queue(),
-                req.page());
+                req.page()
+        );
 
         fetchPlayersDirector.startWork(context);
         return ResponseEntity.ok(buildLogResponse(context.logs));

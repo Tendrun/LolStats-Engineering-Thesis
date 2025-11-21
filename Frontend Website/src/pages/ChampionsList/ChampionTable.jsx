@@ -1,9 +1,7 @@
 import { useState } from "react";
 import './ChampionTable.css';
-import { useNavigate } from "react-router-dom";
 
 export default function ChampionTable({ champions }) {
-  const navigate = useNavigate();
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
 
   const sortedChampions = [...champions].sort((a, b) => {

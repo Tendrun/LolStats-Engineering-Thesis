@@ -70,7 +70,8 @@ public class PullMatchesFromRiotStep implements IStep<FetchMatchesContext> {
                                  msg,
                                  System.currentTimeMillis() - stepStartTime));
 
-                logger.info(LogFormatter.formatStepLog(getClass().getSimpleName(), response != null ? response.status() : StepsOrder.RequestStatus.FAILED, msg, System.currentTimeMillis() - stepStartTime));
+                logger.info(LogFormatter.formatStepLog(getClass().getSimpleName(), response != null ? response.status() :
+                        StepsOrder.RequestStatus.FAILED, msg, System.currentTimeMillis() - stepStartTime));
 
              } catch (Exception e){
                  String msg = "Exception fetching matches for puuid: " + puuid;
@@ -79,7 +80,8 @@ public class PullMatchesFromRiotStep implements IStep<FetchMatchesContext> {
                          .add(new StepLog(StepsOrder.RequestStatus.FAILED, this.getClass().getSimpleName(),
                                  msg + " - " + e.getMessage(),
                                  System.currentTimeMillis() - stepStartTime));
-                logger.error(LogFormatter.formatStepLog(getClass().getSimpleName(), StepsOrder.RequestStatus.FAILED, msg, System.currentTimeMillis() - stepStartTime), e);
+                logger.error(LogFormatter.formatStepLog(getClass().getSimpleName(), StepsOrder.RequestStatus.FAILED, msg,
+                        System.currentTimeMillis() - stepStartTime), e);
              }
          }
      }

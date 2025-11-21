@@ -30,19 +30,4 @@ public class ChampionController {
         List<ChampionDetailsResponse> listOfChampions = championService.getAllChampDetailsFromCouchDB();
         return ResponseEntity.ok(listOfChampions);
     }
-
-    @GetMapping("/getChampion/{id}")
-    public ResponseEntity<Map<String, Object>> getChampion(@PathVariable String id) {
-        Map<String, Object> response =  new LinkedHashMap<>();
-
-        response.put("FullStats", List.of(
-                Map.of("WinRate", 53.23d),
-                Map.of("BanRate", 3.23d),
-                Map.of("PickRate", 13.02),
-                Map.of("Matches", "1302"),
-                Map.of("Tier", "A")
-        ));
-
-        return ResponseEntity.ok(response);
-    }
 }
