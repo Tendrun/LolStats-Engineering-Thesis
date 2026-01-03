@@ -21,12 +21,12 @@ services:
     depends_on:
       - couchdb
     volumes:
-      - ./init-couchdb.sh:/init-couchdb.sh:ro
+      - ./init-couchdb.ps1:/init-couchdb.ps1:ro
     environment:
       COUCH_URL: http://couchdb:5984
       COUCH_USER: admin
       COUCH_PASSWORD: admin
-    entrypoint: ["/bin/sh","/init-couchdb.sh"]
+    entrypoint: ["/bin/sh","/init-couchdb.ps1"]
     restart: "no"
 
 volumes:
